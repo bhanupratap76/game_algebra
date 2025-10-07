@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Alchemy Scale - Solve Equations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Solving Equations Visually</h1>
+        </div>
+
+        <div class="instruction" id="instruction">
+            Now drag the coins from both pans to remove them equally and isolate x!
+        </div>
+
+        <div class="visual-area">
+            <div class="status-message balanced" id="statusMessage">
+                The scale is balanced. Start by removing one coin from each side!
+            </div>
+
+            <div class="scale-display">
+                <!-- Left Pan -->
+                <div class="scale-side" id="leftPan">
+                    <div class="side-label">Left side</div>
+                    <div class="mystery-box">x</div>
+                    <div class="coin-container" id="leftCoins"></div>
+                </div>
+
+                <div class="equation-symbol">=</div>
+
+                <!-- Right Pan -->
+                <div class="scale-side" id="rightPan">
+                    <div class="side-label">Right side</div>
+                    <div class="coin-container" id="rightCoins"></div>
+                </div>
+            </div>
+
+            <button class="drag-hint-btn" id="dragHintBtn" onclick="showDragHint()">
+                ✨ Click to Enable Dragging
+            </button>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section">
+            <div class="quiz-title">Equation Solving Quiz</div>
+            
+            <div class="quiz-equation">
+                <span>x + </span>
+                <input type="number" class="quiz-input" id="inputA" placeholder="?" disabled>
+                <span> = </span>
+                <input type="number" class="quiz-input" id="inputB" placeholder="?" disabled>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="quiz-buttons">
+                <button class="btn btn-hint" onclick="showHint()">💡 Get Hint</button>
+                <button class="btn btn-check" onclick="checkAnswer()">✓ Check Answer</button>
+            </div>
+
+            <div class="question-counter">Question <span id="currentQ">1</span> of <span id="totalQ">3</span></div>
+            
+            <div style="text-align: center; margin-top: 15px;">
+                <button class="btn btn-next" onclick="nextQuestion()" id="nextBtn" style="display: none;">
+                    Continue to Next Question →
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" ></script>    
+</body>
+</html>
